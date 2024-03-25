@@ -14,6 +14,8 @@ modules:
   - name: risk-management-srv
     type: nodejs
     path: gen/srv
+    properties:
+      apikey: <replace_with_your_api_key>
     parameters:
       buildpack: nodejs_buildpack
     build-parameters:
