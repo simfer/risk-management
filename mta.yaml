@@ -21,7 +21,7 @@ modules:
       SAP_CALM_FESR_LOG_LEVEL: debug
       OTEL_LOG_LEVEL: info
       NODE_ARGS: -r @sap/xotel-agent-ext-js/dist/common/tracer
-      apikey: t7M7w7MHlLvAOhDrNAzcRnCaw1YiLfOo
+      apikey: <your_API_key>
     parameters:
       buildpack: nodejs_buildpack
     build-parameters:
