@@ -2,6 +2,13 @@
   "welcomeFile": "app/launchpad.html",
   "routes": [
     {
+      "source": "^/fesr$",
+      "target": "/fesr",
+      "destination": "srv-api",
+      "csrfProtection": false,
+      "authenticationType": "xsuaa"
+    },
+    {
       "source": "^/app/(.*)$",
       "target": "$1",
       "localDir": ".",

@@ -14,18 +14,20 @@
     {
       "name": "RiskViewer",
       "description": "generated",
-      "scope-references": [
-        "$XSAPPNAME.RiskViewer"
-      ],
+      "scope-references": ["$XSAPPNAME.RiskViewer"],
       "attribute-references": []
     },
     {
       "name": "RiskManager",
       "description": "generated",
-      "scope-references": [
-        "$XSAPPNAME.RiskManager"
-      ],
+      "scope-references": ["$XSAPPNAME.RiskManager"],
       "attribute-references": []
     }
-  ]
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://*.authentication.eu10-004.hana.ondemand.com/login/callback",
+      "https://*.cfapps.eu10-004.hana.ondemand.com/login/callback"
+    ]
+  }
 }

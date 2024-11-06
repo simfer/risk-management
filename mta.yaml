@@ -15,7 +15,13 @@ modules:
     type: nodejs
     path: gen/srv
     properties:
-      apikey: <replace_with_your_api_key>
+      SAP_CALM_SERVICE_NAME: risk-management
+      SAP_CALM_SERVICE_TYPE: SAP_CP_CF
+      SAP_CALM_DCI_LOG_LEVEL: debug
+      SAP_CALM_FESR_LOG_LEVEL: debug
+      OTEL_LOG_LEVEL: info
+      NODE_ARGS: -r @sap/xotel-agent-ext-js/dist/common/tracer
+      apikey: t7M7w7MHlLvAOhDrNAzcRnCaw1YiLfOo
     parameters:
       buildpack: nodejs_buildpack
     build-parameters:
@@ -28,6 +34,7 @@ modules:
       - name: risk-management-destination
       - name: risk-management-db
       - name: risk-management-auth
+      - name: cloud-logs
 
   - name: risk-management-db-deployer
     type: hdb
@@ -54,6 +61,8 @@ modules:
       - name: risk-management-auth
 
 resources:
+  - name: cloud-logs
+    type: org.cloudfoundry.existing-service
   - name: risk-management-destination
     type: org.cloudfoundry.managed-service
     parameters:
@@ -75,4 +84,4 @@ resources:
         tenant-mode: dedicated
         oauth2-configuration:
           redirect-uris:
-            - https://*.cfapps.eu10.hana.ondemand.com/login/callback
+            - https://*.cfapps.eu10-004.hana.ondemand.com/login/callback
